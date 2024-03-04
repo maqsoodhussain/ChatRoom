@@ -25,18 +25,19 @@ body{
     border: 8px solid #dddddd;
     border-radius: 25px;
     overflow: hidden;
+    width: 350px;
     padding-right: 0px;
+    margin-bottom: 30px;
 }
 
 .name{
     display: flex;
     font-size: 32px;
     font-weight: 700;
-    padding:8px 16px;
+    padding:8px 1px;
     color: #7e7e7e;
     background-color: #ebebeb;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
+    
 }
 .name > span{
     color:#bbb;
@@ -58,8 +59,8 @@ body{
     display: flex;
     flex-direction: column;
     background-color: #f6f6f6;
-    width: 400px;
-    height: 600px;
+    width: 340px;
+    height: 500px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -77,14 +78,14 @@ body{
 .message-left{
     border-radius: 20px 20px 20px 0px;
     align-self: flex-start;
-    background-color: #fff;
+    background-color: #D1D1D1;
     box-shadow: -2px 2px 4px #dcdcdc;
 }
 
 .message-right{
     border-radius: 20px 20px 0px 20px;
     align-self: flex-end;
-    background-color: #fff;
+    background-color: #7882A4;
     box-shadow: -2px 2px 4px #dcdcdc;
 }
 
@@ -108,4 +109,30 @@ body{
 #user-name{
     color: red;
     font-size: 12px;
+}
+
+.message-form{
+    display: flex;
+    width: 330px;
+}
+
+.message-input{
+    flex-grow: 1;
+    height: 48px;
+    font-size: 16px;
+    border-radius: 18px;
+    border: none;
+    margin-right: 8px;
+    padding: 16px;
+    margin-top: 10px;
+    
+}
+
+
+.img{
+    padding-top: 9px;
+    height: 42px;
+    width: 40px;
+    border: none;
+    border-image-outset: none;
 }

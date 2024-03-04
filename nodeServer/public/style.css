@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+        font-family: 'Madimi One', sans-serif;
+        /* display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; */
+        display: grid;
+        place-items: center;
+        background-color: #ebebeb;
+}
+
+#title{
+   margin: 20px 2px;    
+}
+
+.main{
+    border: 8px solid #dddddd;
+    border-radius: 25px;
+    overflow: hidden;
+    padding-right: 0px;
+}
+
+.name{
+    display: flex;
+    font-size: 32px;
+    font-weight: 700;
+    padding:8px 16px;
+    color: #7e7e7e;
+    background-color: #ebebeb;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+.name > span{
+    color:#bbb;
+    padding: 5px;
+}
+
+.input-name{
+    font-size: 24px;
+    font-weight: 200;
+    color: #7e7e7e;
+    flex-grow: 1;
+    border: none;
+    margin: 0px 12px;
+    outline: none;
+    background-color: #ebebeb;
+}
+
+.message-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f6f6;
+    width: 400px;
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.message-right, .message-left{
+    list-style: none;
+    padding: 8px 12px;
+    margin: 12px;
+    max-width: 250px;
+    font-size: 18px;
+    word-wrap: break-word;
+}
+
+
+.message-left{
+    border-radius: 20px 20px 20px 0px;
+    align-self: flex-start;
+    background-color: #fff;
+    box-shadow: -2px 2px 4px #dcdcdc;
+}
+
+.message-right{
+    border-radius: 20px 20px 0px 20px;
+    align-self: flex-end;
+    background-color: #fff;
+    box-shadow: -2px 2px 4px #dcdcdc;
+}
+
+.message-feedback{
+    margin: 0px;
+    font-size:12px;
+    list-style: none;
+    padding-left: 60px;
+    padding-top: 0px;
+    padding-bottom: 3px;
+}
+
+.message-left >p>span,
+.message-right > p > span{
+    display: block;
+    font-style: italic;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+#user-name{
+    color: red;
+    font-size: 12px;
+}

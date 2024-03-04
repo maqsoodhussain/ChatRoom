@@ -10,19 +10,26 @@
     <title>Chat Room </title>
 </head>
 <body>
-    <h1>Chat Room </h1>
+    <h1 id="title">Chat Room </h1>
     <div class="main">
         <div class="name">
             <span><i class="fa-solid fa-user-group"></i></span>
             <input type="text"
              id="input-name"
              class="input-name"
-             value="TEST"
+             placeholder="TEST"
              maxlength="25"
             />
         </div>
+
+        <li class="message-feedback">
+            <p class="feedback" id="feedback">
+                test is typing...
+            </p>
+        </li>
          <ul class="message-container" id="message-container">
             <li class="message-left">
+                <span id="user-name">test</span>
                 <p class="message">
                     hello ! How are you
                   <span>andriod   03 march 2024 10:30</span>
@@ -36,11 +43,7 @@
                 </p>
             </li>
 
-            <li class="message-feedback">
-                <p class="feedback" id="feedback">
-                    test is typing message
-                </p>
-            </li>
+          
         </ul>
 
         <form class="message-form" id="message-form">

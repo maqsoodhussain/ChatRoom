@@ -17,6 +17,10 @@ msgform.addEventListener('submit', (e) =>{
 socket.on('total-user', (data)=>{
     totalUsers.innerHTML=`Total Users: <b>${data}</b>`;
     totalUsers2.innerHTML=`Total Users: <b>${data}</b>`;
+   if(data === 3){
+    
+        confirm("3Rd person added knows ");
+    }
    
 });
 
@@ -41,10 +45,11 @@ socket.on('chat-msg', (data) =>{
 })
 
 function  addMsg(isOwnMsg, data){
-    const ele= `<li class="${isOwnMsg ? "message-right" : "message-left"}"> <span id="user-name">test</span>
+
+    const ele= `<li class="${isOwnMsg ? "message-right" : "message-right"}">
     <p class="message">
         ${data.message}
-      <span>${data.name}</span>
+      <span>${data.name} 🔹 ${moment(data.dateTime).fromNow()}</span>
     </p>
 </li>`
 

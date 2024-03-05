@@ -19,7 +19,7 @@ function onConnected(socket){
     console.log(socket.id)
     socketsConnected.add(socket.id);
    io.emit('total-user', socketsConnected.size);
-
+  
     socket.on('disconnect', ()=>{
         console.log(`socket discnnected `, socket.id);
         socketsConnected.delete(socket.id);

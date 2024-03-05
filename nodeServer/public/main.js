@@ -24,6 +24,30 @@ socket.on('total-user', (data)=>{
 
 
 function sendMsg(){
-    console.log(msgInput.value)
+    console.log(msgInput.value);
+    const data = {
+        name : userName.value,
+        message : msgInput.value,
+        dataTime : new Date(),
+    }
+    socket.emit('msg',data)
+    addMsg(true, data)
+    msgInput.value = ''
 }
 
+socket.on('chat-msg', (data) =>{
+    console.log(data);
+    addMsg(false, data)
+})
+
+function  addMsg(isOwnMsg, data){
+    const ele= `<li class="${isOwnMsg ? "message-right" : "message-left"}"> <span id="user-name">test</span>
+    <p class="message">
+        ${data.message}
+      <span>${data.name}</span>
+    </p>
+</li>`
+
+msgContainer.innerHTML += ele;
+
+}

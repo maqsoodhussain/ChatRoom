@@ -46,7 +46,7 @@ socket.on('chat-msg', (data) =>{
 
 function  addMsg(isOwnMsg, data){
 
-    const ele= `<li class="${isOwnMsg ? "message-right" : "message-right"}">
+    const ele= `<li class="${isOwnMsg ? "message-right" : "message-left"}">
     <p class="message">
         ${data.message}
       <span>${data.name} 🔹 ${moment(data.dateTime).fromNow()}</span>

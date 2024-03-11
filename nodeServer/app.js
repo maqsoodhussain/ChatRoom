@@ -30,5 +30,9 @@ function onConnected(socket){
         console.log(data);
         socket.broadcast.emit('chat-msg', data)
     })
+
+    socket.on('feedback', (data)=>{
+        socket.broadcast.emit('feedback',data)
+    })
 }
 

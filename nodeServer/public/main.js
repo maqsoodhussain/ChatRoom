@@ -6,6 +6,7 @@ const msgContainer = document.getElementById('message-container')
 const userName = document.getElementById('input-name')
 const msgform = document.getElementById('message-form')
 const msgInput = document.getElementById('message-input')
+const fdb = document.getElementById('fdb')
 
 
 msgform.addEventListener('submit', (e) =>{
@@ -28,6 +29,7 @@ socket.on('total-user', (data)=>{
 
 
 function sendMsg(){
+    if(msgInput.value ==='') return 
     console.log(msgInput.value);
     const data = {
         name : userName.value,
@@ -46,6 +48,7 @@ socket.on('chat-msg', (data) =>{
 
 function  addMsg(isOwnMsg, data){
 
+    clrfdb()
     const ele= `<li class="${isOwnMsg ? "message-right" : "message-left"}">
     <p class="message">
         ${data.message}
@@ -54,5 +57,46 @@ function  addMsg(isOwnMsg, data){
 </li>`
 
 msgContainer.innerHTML += ele;
+scrollToBottom()
 
+}
+
+
+function scrollToBottom(){
+    msgContainer.scrollTo(0,msgContainer.scrollHeight)
+}
+
+msgInput.addEventListener('focus', (e) =>{
+   socket.emit('feedback', {
+    feedback : `${userName.value} Typing...`,
+   })
+})
+
+msgInput.addEventListener('keypress', (e)=>{
+    socket.emit('feedback', {
+        feedback : `${userName.value} Typing...`,
+       })
+})
+
+msgInput.addEventListener('blur', (e)=>{
+    socket.emit('feedback', {
+        feedback : '',
+       })
+})
+
+socket.on('feedback', (data)=>{
+    clrfdb()
+     const ele = `
+     <p class="feedback" id="feedback">
+       ${data.feedback}
+     </p>`
+
+     fdb.innerHTML +=ele
+ 
+})
+
+function clrfdb(){
+    document.querySelectorAll('li.message-feedback').forEach(elemet =>{
+        elemet.parentNode.removeChild(elemet)
+    })
 }

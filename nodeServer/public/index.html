@@ -18,17 +18,13 @@
             <input type="text"
              id="input-name"
              class="input-name"
-             value="Test"
+             value="Anonymous"
              
              maxlength="25"
             />
         </div>
 
-        <li class="message-feedback" id="fdb">
-            <p class="feedback" id="feedback">
-                test is typing...
-            </p>
-        </li>
+       
          <ul class="message-container" id="message-container">
             <li class="message-left">
                 <p class="message">
@@ -43,7 +39,11 @@
                   <span>andriod   03 march 2024 10:30</span>
                 </p>
             </li>
-
+            <li class="message-feedback" id="fdb">
+                <!-- <p class="feedback" id="feedback">
+                    test is typing...
+                </p> -->
+            </li>
           
         </ul>
 
@@ -56,6 +56,7 @@
     <div>
         <h3 class="total-user" id="usertotal2">Total Users: <b>2</b></h3>
     </div>
+    <script>alert("Click Anonymous and Enter Your Name")</script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" referrerpolicy="no-referrer"></script>
 <script src="main.js"></script>

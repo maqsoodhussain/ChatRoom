@@ -74,29 +74,34 @@ msgInput.addEventListener('focus', (e) =>{
 
 msgInput.addEventListener('keypress', (e)=>{
     socket.emit('feedback', {
-        feedback : `${userName.value} Typing...`,
+        feedback : `${userName.value} is Typing...`,
+        
        })
+       scrollToBottom()
 })
 
-msgInput.addEventListener('blur', (e)=>{
-    socket.emit('feedback', {
-        feedback : '',
-       })
-})
+// msgInput.addEventListener('blur', (e)=>{
+//     socket.emit('feedback', {
+//         feedback : '',
+//        })
+// })
 
 socket.on('feedback', (data)=>{
     clrfdb()
      const ele = `
-     <p class="feedback" id="feedback">
-       ${data.feedback}
-     </p>`
+     <li class="message-feedback" id="fdb">
+            <p class="feedback" id="feedback">
+                ${data.feedback}
+            </p>
+        </li>`
 
-     fdb.innerHTML +=ele
+     msgContainer.innerHTML +=ele
+    
  
 })
 
 function clrfdb(){
-    document.querySelectorAll('li.message-feedback').forEach(elemet =>{
-        elemet.parentNode.removeChild(elemet)
+    document.querySelectorAll('li.message-feedback').forEach(element =>{
+        element.parentNode.removeChild(element)
     })
 }
